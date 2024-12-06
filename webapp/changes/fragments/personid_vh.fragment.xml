@@ -1,0 +1,34 @@
+<core:FragmentDefinition
+	xmlns="sap.m"
+	xmlns:core="sap.ui.core">
+	<TableSelectDialog
+		noDataText="No Products Found"
+		title="Select Product"
+		search=".handleSearch"
+		
+		confirm=".handleValueHelpClose"
+		cancel=".handleValueHelpClose"
+		showClearButton="false"
+		items="{
+			path : 'taskModel1>/results1',
+			sorter : {
+				path : 'BusinessPartner',
+				descending : true
+			}
+		}">
+		<ColumnListItem selected="false">
+			<cells>
+					<Text text="{taskModel1>BusinessPartner}" />
+					<Text text="{taskModel1>BusinessPartnerName}" />
+			</cells>
+		</ColumnListItem>
+		<columns>
+                    <Column>
+                        <Text text="Business Partner" />
+                    </Column>
+                    <Column>
+                        <Text text="Business Partner Name" />
+                    </Column>
+                </columns>
+	</TableSelectDialog>
+</core:FragmentDefinition>

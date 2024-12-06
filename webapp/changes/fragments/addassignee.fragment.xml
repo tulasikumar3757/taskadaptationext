@@ -1,0 +1,78 @@
+<!-- Use stable and unique IDs!-->
+<core:FragmentDefinition xmlns:layout="sap.ui.layout"
+    xmlns:uxap="sap.uxap"
+    xmlns:core='sap.ui.core'
+    xmlns='sap.m'
+>
+    <uxap:ObjectPageSection
+        id="op-section-17f07a0d"
+        title="Additional Assignee"
+    >
+        <uxap:ObjectPageSubSection id="op-subsection-17f07a0d">
+        <layout:Grid id="grid-add-assignee" defaultSpan="L12 M12 S12">
+                <!-- Table for Additional Assignees -->
+                <Table id="table-additional-assignees" items="{taskModel>/results}" 
+                    selectionChange=".extension.customer.task.variant.addassignee.onSelectionChange" growing="true" growingThreshold="10" mode="MultiSelect">
+                    <headerToolbar>
+                        <OverflowToolbar id="header-toolbar-products">
+                            <Title id="title-products" text="Add Assignee" level="H2" />
+                            <ToolbarSpacer id="toolbar-spacer-assignee" />
+                            <Button id="button-add-assignee" icon="sap-icon://add" text="Add Assignee" type="Transparent" press=".extension.customer.task.variant.addassignee.onAdd" enabled="{taskModel>/add_button_status}"/>
+                            <Button id="button-edit-assignee" icon="sap-icon://edit" text="Edit Assignee" type="Transparent" press=".extension.customer.task.variant.addassignee.onEdit" enabled="{taskModel>/edit_button_status}"/>
+                            <Button id="button-delete-assignee" icon="sap-icon://delete" text="Delete Assignee" type="Reject" press=".extension.customer.task.variant.addassignee.onDelete" />
+                        </OverflowToolbar>
+                    </headerToolbar>
+                    <!-- Define Columns -->
+                    <columns>
+                        <Column id="column-assignee-personid">
+                            <Text id="text-column-assignee-id" text="Person ID" />
+                        </Column>
+                        <Column id="column-assignee-person-name">
+                            <Text id="text-column-assignee-name" text="Person Name" />
+                        </Column>
+                        <Column id="column-task-des">
+                            <Text id="text-column-task-des" text="Description" />
+                        </Column>
+                        <Column id="column-task-status">
+                            <Text id="text-column-task-status" text="Status" />
+                        </Column>
+                        <Column id="column-task-duedate">
+                            <Text id="text-column-task-duedate" text="Due Date" />
+                        </Column>
+                    </columns>
+                    <!-- Hardcoded Items -->
+                    <items>
+                        <ColumnListItem id="row-item-1">
+                            <cells>
+                                <Input id="1" value="{taskModel>AddpersonID}" valueHelpRequest=".extension.customer.task.variant.addassignee.onValueHelpRequested_Id" showValueHelp="true" editable="{taskModel>isEditable}"
+                                        valueState="None" valueStateText="This field is mandatory" 
+                                        change=".extension.customer.task.variant.addassignee.onInputChange"/>
+                                <Text id="2" text="{taskModel>PersonName}" />
+                                <Input id="3" value="{taskModel>Description}" editable="{taskModel>isEditable}"/>
+                                <!-- <Text text="{taskModel>DueDate}" /> -->
+                                <Input id="4" value="{taskModel>Status}" editable="{taskModel>isEditable}"/>
+                                <DatePicker id="datePicker" value="{taskModel>DueDate}" valueFormat="yyyy-MM-dd" 
+                                    change=".extension.customer.task.variant.addassignee.onDateChange"
+                                    editable="{taskModel>isEditable}" displayFormat="medium"/>
+                            </cells>
+                        </ColumnListItem>
+                        <!-- <ColumnListItem id="row-item-2">
+                            <cells>
+                                <Input id="text-item-2-id" value="998000081" valueHelpRequest="onVH" showValueHelp="true" />
+                                <Input id="text-item-2-name" />
+                                <Input id="text-item-2-des" />
+                                <Text id="text-item-2-status" text="In Progress" />
+                            </cells>
+                        </ColumnListItem> -->
+                    </items>
+                    
+                </Table>
+                        <OverflowToolbar id="footer-toolbar">
+                            <ToolbarSpacer id="footer-toolbar-spacer" />
+                            <Button id="footer-button-save" text="Save" type="Transparent" press=".extension.customer.task.variant.addassignee.onSave" enabled="{taskModel>/save_button_status}" />
+                            <Button id="footer-button-cancel" text="Cancel" type="Reject" press=".extension.customer.task.variant.addassignee.onCancel" enabled="true" />
+                        </OverflowToolbar>
+            </layout:Grid>
+        </uxap:ObjectPageSubSection>
+    </uxap:ObjectPageSection>
+</core:FragmentDefinition>

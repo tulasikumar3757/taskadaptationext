@@ -1,0 +1,30 @@
+{
+  "changeType": "addXML",
+  "reference": "customer.task.variant",
+  "namespace": "apps/customer.task.variant/changes/",
+  "creation": "2024-11-25T13:56:36.402Z",
+  "projectId": "customer.task.variant",
+  "packageName": "$TMP",
+  "moduleName": "customer/task/variant/changes/fragments/personid_vh.fragment.xml",
+  "support": {
+    "generator": "@sap-ux/control-property-editor",
+    "sapui5Version": "1.120.14",
+    "command": "addXML"
+  },
+  "originalLanguage": "EN",
+  "layer": "CUSTOMER_BASE",
+  "fileType": "change",
+  "fileName": "id_1732542987670_249_addXML",
+  "content": {
+    "targetAggregation": "subSections",
+    "index": 2,
+    "fragmentPath": "fragments/personid_vh.fragment.xml"
+  },
+  "texts": {},
+  "selector": {
+    "id": "ehs.fnd.task.insts1::sap.suite.ui.generic.template.ObjectPage.view.Details::C_EHSTaskInstance--customer.task.variant.op-section-17f07a0d",
+    "idIsLocal": false
+  },
+  "dependentSelector": {},
+  "jsOnly": false
+}

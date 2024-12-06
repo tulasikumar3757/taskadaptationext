@@ -1,0 +1,29 @@
+{
+  "fileName": "id_1732109106519",
+  "namespace": "apps/ehs.fnd.task.insts1/appVariants/customer.task.variant/changes",
+  "layer": "CUSTOMER_BASE",
+  "fileType": "change",
+  "creation": "2024-11-20T13:25:06.519Z",
+  "packageName": "$TMP",
+  "reference": "customer.task.variant",
+  "support": {
+    "generator": "@sap-ux/adp-tooling"
+  },
+  "changeType": "appdescr_ui5_addNewModel",
+  "content": {
+    "dataSource": {
+      "customer.ZAPI_EHHSSD_TDEF_ADD_O2": {
+        "uri": "/sap/opu/odata/sap/",
+        "type": "OData",
+        "settings": {
+          "odataVersion": "2.0"
+        }
+      }
+    },
+    "model": {
+      "customer.add_assignee": {
+        "dataSource": "customer.ZAPI_EHHSSD_TDEF_ADD_O2"
+      }
+    }
+  }
+}
